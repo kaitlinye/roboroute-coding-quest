@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RoboRoute Coding Quest</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="nested.css" />
+  <link rel="stylesheet" href="drag.css" />
+</head>
+<body>
+  <header>
+    <div class="brand"><span class="brand-bot">R</span><div><strong>RoboRoute</strong><small>CODING QUEST</small></div></div>
+    <div class="progress-wrap"><span id="stageLabel">Stage 1 of 6</span><div class="progress"><i id="progressBar"></i></div></div>
+    <div class="stars" aria-label="stars earned"><span>★</span><b id="starCount">0</b></div>
+  </header>
+
+  <main>
+    <section class="mission card">
+      <div class="mission-copy"><span class="eyebrow" id="concept">SEQUENCES</span><h1 id="title">First Steps</h1><p id="story">Help Bolt reach the charging station.</p></div>
+      <button class="stage-picker" id="stagePicker" aria-haspopup="true">☰ Stages</button>
+      <div class="stage-menu hidden" id="stageMenu"></div>
+    </section>
+
+    <section class="game-layout">
+      <div class="world card">
+        <div class="world-top"><div><span class="pulse"></span><b>LIVE MAP</b></div><div class="legend"><span>⬡ Bolt</span><span>◆ Goal</span></div></div>
+        <div id="map" class="map" aria-label="robot map"></div>
+        <div class="tip" id="tip">Plan the route, then press Run!</div>
+      </div>
+
+      <div class="code card">
+        <div class="code-head"><div><span class="eyebrow">YOUR PROGRAM</span><h2>Build Bolt's route</h2></div><div class="code-actions"><button class="guide-button" id="guideBtn">? Block guide</button><button class="clear" id="clearBtn">Clear all</button></div></div>
+        <div class="toolbox" id="toolbox"></div>
+        <div class="workspace" id="workspace"><div class="empty" id="empty"><span>＋</span><b>Add blocks to begin</b><small>Tap a command below</small></div></div>
+        <div class="controls"><button id="stepBtn" class="secondary">Step</button><button id="runBtn" class="run">▶ Run program</button><button id="resetBtn" class="secondary">↻ Reset</button></div>
+        <div class="feedback" id="feedback" role="status">Build a program to guide Bolt.</div>
+      </div>
+    </section>
+
+    <section class="lesson card"><div class="teacher">💡</div><div><b id="lessonTitle">Coding idea: Sequence</b><p id="lessonText">Computers follow commands in order, one step at a time.</p></div><button id="hintBtn">Show hint</button></section>
+  </main>
+
+  <div class="modal hidden" id="winModal"><div class="modal-card"><div class="big-star">★</div><span class="eyebrow" id="winEyebrow">MISSION COMPLETE</span><h2 id="winTitle">Brilliant coding!</h2><p id="winCopy">Bolt reached the goal.</p><div class="earned" id="earned">★★★</div><button id="nextBtn">Next mission →</button></div></div>
+  <div class="modal hidden" id="guideModal"><div class="modal-card guide-card"><button class="modal-close" id="closeGuide" aria-label="Close guide">×</button><span class="eyebrow">BLOCK GUIDE</span><h2>What does each block do?</h2><p class="guide-intro">Tap a block to add it. For containers, tap the dotted space inside, then add the commands that belong there.</p><div id="guideList" class="guide-list"></div></div></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
